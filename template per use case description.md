@@ -2,10 +2,10 @@
 
 ## 1. General Information
 
-* **Use Case Name:**
-* **Primary Actor:**
-* **Secondary Actors:**
-* **Description:**
+* **Use Case Name: Reserve Book
+* **Primary Actor: Student
+* **Secondary Actors: Library System
+* **Description: A student reserves a book that is currently unavailable so they can borrow it later.
 
 ---
 
