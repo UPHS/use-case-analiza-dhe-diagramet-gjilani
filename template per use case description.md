@@ -44,16 +44,18 @@
 
 ## 5. Postconditions
 
-*
+- The book is reserved for the student
+- The reservation is stored in the system
 
 ---
 
 ## 6. Business Rules (optional)
 
-*
+- A student can reserve a maximum of 3 books
+- Reservation expires after 2 days if not collected
 
 ---
 
 ## 7. Notes
 
-*
+- The system may notify the student when the book becomes available
