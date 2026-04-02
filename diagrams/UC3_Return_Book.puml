@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Student as student
+actor Librarian as librarian
+actor "Library System" as sys
+
+rectangle "Library Management System" {
+  usecase "Return Book" as UC3
+  usecase "Check Overdue" as UC_Check
+  usecase "Record Return" as UC_Record
+  usecase "Pay Fine" as UC_Fine
+  usecase "Register Damage" as UC_Damage
+}
+
+student --> UC3
+librarian --> UC3
+UC3 --> sys
+
+UC3 ..> UC_Check : <<include>>
+UC3 ..> UC_Record : <<include>>
+
+UC_Fine .> UC3 : <<extend>> (if overdue)
+UC_Damage .> UC3 : <<extend>> (if damaged)
+
+@enduml

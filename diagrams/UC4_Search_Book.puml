@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Student as student
+actor "Library System" as sys
+
+rectangle "Library Management System" {
+  usecase "Search Book" as UC4
+  usecase "View Book Details" as UC_View
+  usecase "Filter Search Results" as UC_Filter
+}
+
+student --> UC4
+UC4 --> sys
+
+UC_View .> UC4 : <<extend>>
+UC_Filter .> UC4 : <<extend>>
+
+note right of UC4
+  Can search by:
+  Title, Author, ISBN, Category
+end note
+@enduml

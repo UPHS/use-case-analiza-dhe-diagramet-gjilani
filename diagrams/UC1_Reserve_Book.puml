@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Student as student
+actor "Library System" as sys
+
+rectangle "Library Management System" {
+  usecase "Reserve Book" as UC1
+}
+
+student --> UC1
+UC1 --> sys
+
+note right of UC1
+  Precondition: Book is currently unavailable.
+  Postcondition: Book is reserved for the student.
+end note
+@enduml
