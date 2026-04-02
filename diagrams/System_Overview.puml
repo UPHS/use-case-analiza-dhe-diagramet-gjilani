@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Student as student
+actor Librarian as librarian
+actor "Library System" as sys
+
+rectangle "Library Management System" {
+  usecase "UC1: Reserve Book" as UC1
+  usecase "UC2: Borrow Book" as UC2
+  usecase "UC3: Return Book" as UC3
+  usecase "UC4: Search Book" as UC4
+}
+
+student --> UC1
+sys <-- UC1
+
+student --> UC2
+librarian --> UC2
+UC2 --> sys
+
+student --> UC3
+librarian --> UC3
+UC3 --> sys
+
+student --> UC4
+UC4 --> sys
+
+@enduml

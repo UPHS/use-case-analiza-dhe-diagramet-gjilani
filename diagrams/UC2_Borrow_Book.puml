@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Student as student
+actor Librarian as librarian
+actor "Library System" as sys
+
+rectangle "Library Management System" {
+  usecase "Borrow Book" as UC2
+  usecase "Check Availability & Limit" as UC_Check
+  usecase "Register Transaction" as UC_Reg
+}
+
+student --> UC2
+librarian --> UC2
+UC2 --> sys
+
+UC2 ..> UC_Check : <<include>>
+UC2 ..> UC_Reg : <<include>>
+
+note right of UC2
+  Alternative Flows:
+  - Student has exceeded limit
+  - Book is reserved by another
+end note
+@enduml
